@@ -1,0 +1,31 @@
+id: nrf24_nrf24_decoder_b
+label: nrf24_decoder_b
+category: '[nrf24]'
+
+templates:
+  imports: from gnuradio import nrf24
+  make: nrf24.nrf24_decoder_b(${address_size}, ${crc_size})
+
+parameters:
+- id: address_size
+  label: address_size
+  dtype: byte
+  default: 5
+- id: crc_size
+  label: crc_size
+  dtype: byte
+  default: 2
+
+inputs:
+- label: bits
+  domain: stream
+  dtype: byte
+  vlen: 1
+  optional: 0
+
+outputs:
+- domain: message
+  id: pdu
+  optional: false
+
+file_format: 1

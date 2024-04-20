@@ -1,0 +1,23 @@
+id: nrf24_nrf24_encoder_b
+label: nrf24_encoder_b
+category: '[nrf24]'
+
+templates:
+  imports: from gnuradio import nrf24
+  make: nrf24.nrf24_encoder_b()
+
+parameters: []
+
+inputs:
+- domain: message
+  id: pdu
+  optional: false
+
+outputs:
+- label: bits
+  domain: stream
+  dtype: byte
+  vlen: 1
+  optional: 0
+
+file_format: 1
